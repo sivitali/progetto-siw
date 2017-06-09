@@ -1,4 +1,4 @@
-package it.uniroma3.it.progettosiw;
+package it.uniroma3.progettosiw;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
