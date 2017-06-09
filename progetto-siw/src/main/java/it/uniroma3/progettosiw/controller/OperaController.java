@@ -1,4 +1,4 @@
-package it.uniroma3.controller;
+package it.uniroma3.progettosiw.controller;
 
 import javax.validation.Valid;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import it.uniroma3.modello.Opera;
-import it.uniroma3.service.OperaService;
+import it.uniroma3.progettosiw.modello.Opera;
+import it.uniroma3.progettosiw.service.OperaService;
 
 @Controller
 public class OperaController {

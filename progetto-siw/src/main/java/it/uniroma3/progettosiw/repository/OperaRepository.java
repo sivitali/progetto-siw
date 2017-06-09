@@ -1,9 +1,10 @@
-package it.uniroma3.repository;
+package it.uniroma3.progettosiw.repository;
 
 import java.util.List;
 import org.springframework.data.repository.CrudRepository;
-import it.uniroma3.modello.Autore;
-import it.uniroma3.modello.Opera;
+
+import it.uniroma3.progettosiw.modello.Autore;
+import it.uniroma3.progettosiw.modello.Opera;
 
 public interface OperaRepository extends CrudRepository<Opera, Long>{
 	

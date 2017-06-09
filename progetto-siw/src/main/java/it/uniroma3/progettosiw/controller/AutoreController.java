@@ -1,4 +1,4 @@
-package it.uniroma3.controller;
+package it.uniroma3.progettosiw.controller;
 
 
 import javax.validation.Valid;
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import it.uniroma3.modello.Autore;
-import it.uniroma3.service.AutoreService;
+import it.uniroma3.progettosiw.modello.Autore;
+import it.uniroma3.progettosiw.service.AutoreService;
 
 @Controller
 public class AutoreController {

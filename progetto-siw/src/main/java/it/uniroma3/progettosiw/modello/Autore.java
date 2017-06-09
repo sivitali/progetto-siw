@@ -1,12 +1,15 @@
-package it.uniroma3.modello;
+package it.uniroma3.progettosiw.modello;
 
 
 
 import java.util.Date;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
@@ -26,6 +29,8 @@ public class Autore {
 	private Date dataNascita;
 	@Temporal(TemporalType.DATE)
 	private Date dataMorte;
+	@OneToMany(mappedBy="autore")
+	private List<Opera> opereRealizzate;
 
 	public Autore (String nome, String cognome, String nazionalita, Date dataNascita, Date dataMorte) {
 		this.nome = nome;
@@ -82,6 +87,14 @@ public class Autore {
 
 	public void setDataMorte(Date dataMorte) {
 		this.dataMorte = dataMorte;
+	}
+
+	public List<Opera> getOpereRealizzate() {
+		return opereRealizzate;
+	}
+
+	public void setOpereRealizzate(List<Opera> opereRealizzate) {
+		this.opereRealizzate = opereRealizzate;
 	}
 
 }

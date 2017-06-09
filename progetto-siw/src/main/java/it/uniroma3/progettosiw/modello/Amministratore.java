@@ -1,4 +1,4 @@
-package it.uniroma3.modello;
+package it.uniroma3.progettosiw.modello;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

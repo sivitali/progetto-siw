@@ -1,4 +1,4 @@
-package it.uniroma3.modello;
+package it.uniroma3.progettosiw.modello;
 
 
 
@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -22,6 +23,7 @@ public class Opera {
 	private int lunghezza;
 	private int larghezza;
 	@NotNull
+	@ManyToOne
 	private Autore autore;
 
 	public Opera (String titolo, int anno, String tecnica, int lunghezza, int larghezza, Autore autore){

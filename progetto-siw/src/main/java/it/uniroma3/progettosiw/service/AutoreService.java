@@ -1,11 +1,10 @@
-package it.uniroma3.service;
+package it.uniroma3.progettosiw.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
-
-import it.uniroma3.modello.Autore;
-import it.uniroma3.repository.AutoreRepository;
+import it.uniroma3.progettosiw.modello.Autore;
+import it.uniroma3.progettosiw.repository.AutoreRepository;
 
 public class AutoreService {
 
