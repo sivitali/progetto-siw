@@ -10,12 +10,12 @@
                 <div>
                     <span th:text="#{label.nome}">Nome: </span>       
                     <span><input type="text" th:field="*{nome}" /></span> 
-                    <span th:if="${#fields.hasErrors('nome')}" th:text="#{label.mandatory}">Error</span>                            
+                    <span th:if="${#fields.hasErrors('nome')}" th:text="#{label.obbligatorio}">Error</span>                            
                 </div>
                 <div>
                     <span th:text="#{label.cognome}">Cognome: </span>
                     <span><input type="text" th:field="*{cognome}" /></span>
-                    <span th:if="${#fields.hasErrors('cognome')}" th:text="#{label.mandatory}">Error</span>
+                    <span th:if="${#fields.hasErrors('cognome')}" th:text="#{label.obbligatorio}">Error</span>
                 </div>
                 <div>
                     <span th:text="#{label.nazionalita}">Nazionalita: </span>
@@ -24,10 +24,12 @@
                     <div>
                     <span th:text="#{label.dataNascita}">Data di Nascita: </span>
                     <span><input type="date" th:field="*{dataNascita}" /></span>
+                    <span th:text="#{label.data}"></span>
                 </div>
                 <div>
                     <span th:text="#{label.dataNascita}">Data di Morte: </span>
                     <span><input type="date" th:field="*{dataMorte}" /></span>
+                   <span th:text="#{label.data}"></span>
                 </div>
                 <div>
                     <span><button type="submit">Submit</button></span>
