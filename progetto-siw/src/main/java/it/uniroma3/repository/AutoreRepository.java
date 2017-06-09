@@ -17,6 +17,6 @@ public interface AutoreRepository extends CrudRepository <Autore, Long>{
 	
 	List<Autore> findByDataNascita (Date dataNascita);
 	
-	List<Autore> findByDataMorte (Date dataMorte);
+	
 
 }
