@@ -10,31 +10,31 @@
                 <div>
                     <span th:text="#{label.titolo}">Titolo: </span>
                     <span><input type="text" th:field="*{titolo}" /></span>
-                    <span th:if="${#fields.hasErrors('titolo')}" th:text="#{label.mandatory}">Error</span>
+                    <span th:if="${#fields.hasErrors('titolo')}" th:text="#{label.obbligatorio}">Error</span>
                 </div>
                 <div>
                     <span th:text="#{label.anno}">Anno: </span>
                     <span><input type="text" th:field="*{anno}" /></span>
-                    <span th:if="${#fields.hasErrors('anno')}" th:text="#{label.number}">Error</span>
+                    <span th:if="${#fields.hasErrors('anno')}" th:text="#{label.numero}">Error</span>
                 </div>
                 <div>
                     <span th:text="#{label.tecnica}">Tecnica: </span>
                     <span><input type="text" th:field="*{tecnica}" /></span>
                 </div>
                 <div>
-                    <span th:text="lunghezza">Lunghezza: </span>
+                    <span th:text="#{label.lunghezza}">Lunghezza: </span>
                     <span><input type="text" th:field="*{lughezza}" /></span>
-                    <span th:text="#{label.number}"></span>
+                    <span th:text="#{label.numero}"></span>
                 </div>
                 <div>
                     <span th:text="#{label.larghezza}">Larghezza: </span>
                     <span><input type="text" th:field="*{larghezza}" /></span>
-                    <span th:text="#{label.number}"></span>
+                    <span th:text="#{label.numero}"></span>
                 </div>
                 <div>
                     <span th:text="#{label.autore}">Autore: </span>
                     <span><input type="text" th:field="*{autore}" /></span>
-                    <span th:if="${#fields.hasErrors('autore')}" th:text="#{label.mandatory}">Error</span>
+                    <span th:if="${#fields.hasErrors('autore')}" th:text="#{label.obbligatorio}">Error</span>
                 </div>
                 <div>
                     <span><button type="submit">Invia</button></span>
