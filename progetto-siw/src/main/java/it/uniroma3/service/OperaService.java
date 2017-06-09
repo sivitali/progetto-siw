@@ -27,8 +27,8 @@ public class OperaService {
 	}
 	
 	@Transactional
-	public void delete(Opera opera){
-		this.operaRepository.delete(opera);
+	public void deleteById(Long id){
+		this.operaRepository.delete(id);
 	}
 	
 }
