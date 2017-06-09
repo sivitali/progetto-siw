@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Autore {
@@ -16,7 +17,9 @@ public class Autore {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
+	@NotNull
 	private  String nome;
+	@NotNull
 	private  String cognome;
 	private String nazionalita;
 	@Temporal(TemporalType.DATE)
