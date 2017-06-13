@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Dati Opera</title>
+</head>
+<body>
+	<div>
+		<p th:text="#{label.titolo} + ${opera.titolo}" />
+	</div>
+	<div>
+		<p th:text="#{label.anno} + ${opera.anno}" />
+	</div>
+	<div>
+		<p th:text="#{label.tecnica} + ${opera.tecnica}" />
+	</div>
+	<div>
+		<p th:text="#{label.lunghezza} + ${opera.lunghezza}" />
+	</div>
+	<div>
+		<p th:text="#{label.larghezza} + ${opera.larghezza}" />
+	</div>
+	<div>
+		<p th:text="#{label.autore} + ${opera.autore}" />
+	</div>
+</body>
+</html>

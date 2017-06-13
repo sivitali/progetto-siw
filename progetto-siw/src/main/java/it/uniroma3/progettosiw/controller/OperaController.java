@@ -32,7 +32,7 @@ public class OperaController {
 			model.addAttribute(opera);
 			this.operaService.add(opera);
 		}
-		return "resultsOpera";
+		return "datiOpera";
 	}
 
 }

@@ -24,7 +24,6 @@ public class Opera {
 	private String tecnica;
 	private int lunghezza;
 	private int larghezza;
-	@NotNull
 	@ManyToOne
 	private Autore autore;
 	
