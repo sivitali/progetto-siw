@@ -3,51 +3,55 @@ package it.uniroma3.progettosiw.security;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
-	public class SecurityConfig  extends WebSecurityConfigurerAdapter {
-		
-		 @Autowired
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig  extends WebSecurityConfigurerAdapter {
 
-		    private DataSource dataSource;
+	@Autowired
 
-		 
-
-			@Override
-
-			protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+	private DataSource dataSource;
 
 
 
-				auth.jdbcAuthentication().dataSource(dataSource)
+	@Override
 
-				.usersByUsernameQuery("select username,password, enabled from users where username=?")
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
-				.authoritiesByUsernameQuery("select username, role from user_roles where username=?");
 
-			}
 
-		 
+		auth.jdbcAuthentication().dataSource(dataSource)
 
-			@Override
+		.usersByUsernameQuery("select username,password, enabled from users where username=?")
 
-			protected void configure(HttpSecurity http) throws Exception {
+		.authoritiesByUsernameQuery("select username, role from user_roles where username=?");
 
-				http
-		        .authorizeRequests().antMatchers("/","/home").permitAll().antMatchers("/admin").hasRole("ADMIN")
-		            .anyRequest().authenticated()     
-		            .and()
-		        .formLogin()
-		            .loginPage("/login")
-		            .permitAll()
-		            .and()
-		        .logout()
-		           .permitAll();
-		       http.exceptionHandling().accessDeniedPage("/403");
-			}
+	}
 
-		 
 
-		}
+
+	@Override
+
+	protected void configure(HttpSecurity http) throws Exception {
+
+		http
+		.authorizeRequests().antMatchers("/","/home").permitAll().antMatchers("/admin").hasRole("ADMIN")
+		.anyRequest().authenticated()     
+		.and()
+		.formLogin()
+		.loginPage("/login")
+		.permitAll()
+		.and()
+		.logout()
+		.permitAll();
+		http.exceptionHandling().accessDeniedPage("/403");
+	}
+
+
+
+}
