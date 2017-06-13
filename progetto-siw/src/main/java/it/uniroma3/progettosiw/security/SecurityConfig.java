@@ -35,14 +35,17 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 			protected void configure(HttpSecurity http) throws Exception {
 
-				http.authorizeRequests().antMatchers("/", "/home").permitAll().antMatchers("/admin").hasRole("ADMIN")
-
-						.anyRequest().authenticated().and().formLogin().loginPage("/login").permitAll().and().logout()
-
-						.permitAll();
-
-				http.exceptionHandling().accessDeniedPage("/403");
-
+				http
+		        .authorizeRequests().antMatchers("/","/home").permitAll().antMatchers("/admin").hasRole("ADMIN")
+		            .anyRequest().authenticated()     
+		            .and()
+		        .formLogin()
+		            .loginPage("/login")
+		            .permitAll()
+		            .and()
+		        .logout()
+		           .permitAll();
+		       http.exceptionHandling().accessDeniedPage("/403");
 			}
 
 		 
