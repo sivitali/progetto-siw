@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <title>Inserimento Opera</title>
 </head>
 <body>
 	<form action="#" th:action="@{/opera}" th:object="${opera}" method="post">
+	<input type="hidden" th:field="*{id}"/>
             <div>
                 <div>
                     <span th:text="#{label.titolo}">Titolo: </span>
@@ -14,7 +15,7 @@
                 </div>
                 <div>
                     <span th:text="#{label.anno}">Anno: </span>
-                    <span><input type="text" th:field="*{anno}" /></span>
+                    <span><input type="number" th:field="*{anno}" /></span>
                     <span th:if="${#fields.hasErrors('anno')}" th:text="#{label.numero}">Error</span>
                 </div>
                 <div>
@@ -23,12 +24,12 @@
                 </div>
                 <div>
                     <span th:text="#{label.lunghezza}">Lunghezza: </span>
-                    <span><input type="text" th:field="*{lughezza}" /></span>
+                    <span><input type="number" th:field="*{lunghezza}" /></span>
                     <span th:text="#{label.numero}"></span>
                 </div>
                 <div>
                     <span th:text="#{label.larghezza}">Larghezza: </span>
-                    <span><input type="text" th:field="*{larghezza}" /></span>
+                    <span><input type="number" th:field="*{larghezza}" /></span>
                     <span th:text="#{label.numero}"></span>
                 </div>
                 <div>

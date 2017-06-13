@@ -27,8 +27,8 @@ public class AutoreService {
 	}
 
 	@Transactional
-	public void deleteById (Autore autore){
-		this.autoreRepository.delete(autore);
+	public void deleteById (Long id){
+		this.autoreRepository.delete(id);
 	}
 
 }
