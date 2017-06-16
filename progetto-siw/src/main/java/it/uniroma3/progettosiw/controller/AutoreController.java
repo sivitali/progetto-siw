@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import it.uniroma3.progettosiw.modello.Autore;
+import it.uniroma3.progettosiw.model.Autore;
 import it.uniroma3.progettosiw.service.AutoreService;
 
 @Controller
@@ -19,7 +19,7 @@ public class AutoreController {
 
 
 	@Autowired
-	private AutoreService autoreservice;
+	private AutoreService autoreService;
 
 	@GetMapping ("/autore")
 	public String showForm(Autore autore){
@@ -35,7 +35,7 @@ public class AutoreController {
 		}
 		else {                                                                                                          //model è un wrapper
 			model.addAttribute(autore);
-			autoreservice.add(autore); 
+			autoreService.add(autore); 
 		}
 		return "datiAutore";               
 	}

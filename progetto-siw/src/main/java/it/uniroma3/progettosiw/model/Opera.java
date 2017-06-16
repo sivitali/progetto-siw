@@ -1,6 +1,4 @@
-package it.uniroma3.progettosiw.modello;
-
-
+package it.uniroma3.progettosiw.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -29,13 +27,12 @@ public class Opera {
 	
 	protected Opera(){}
 
-	public Opera (String titolo, int anno, String tecnica, int lunghezza, int larghezza, Autore autore){
+	public Opera (String titolo, int anno, String tecnica, int lunghezza, int larghezza){
 		this.titolo = titolo;
 		this.anno = anno;
 		this.tecnica = tecnica;
 		this.lunghezza = lunghezza;
 		this.larghezza = larghezza;
-		this.autore = autore;
 	}
 
 	public Long getId() {

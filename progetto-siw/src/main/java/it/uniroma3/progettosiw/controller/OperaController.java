@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import it.uniroma3.progettosiw.modello.Opera;
+import it.uniroma3.progettosiw.model.Opera;
 import it.uniroma3.progettosiw.service.OperaService;
 
 @Controller

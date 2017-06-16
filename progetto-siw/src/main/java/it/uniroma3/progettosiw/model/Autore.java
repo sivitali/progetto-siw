@@ -1,6 +1,4 @@
-package it.uniroma3.progettosiw.modello;
-
-
+package it.uniroma3.progettosiw.model;
 
 import java.util.Date;
 import java.util.List;
@@ -15,6 +13,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name="autori")
 public class Autore {
@@ -27,12 +27,16 @@ public class Autore {
 	@NotNull
 	private  String cognome;
 	private String nazionalita;
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@Temporal(TemporalType.DATE)
 	private Date dataNascita;
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@Temporal(TemporalType.DATE)
 	private Date dataMorte;
 	@OneToMany(mappedBy="autore")
 	private List<Opera> opereRealizzate;
+	
+	protected Autore() {}
 
 	public Autore (String nome, String cognome, String nazionalita, Date dataNascita, Date dataMorte) {
 		this.nome = nome;

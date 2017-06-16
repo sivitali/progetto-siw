@@ -1,49 +1,55 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>    
-<link href="css/bootstrap.min.css" rel="stylesheet" media="screen"/>
-<link href="css/riepilogo.css" rel="stylesheet" media="screen"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
+<link href="css/riepilogo.css" rel="stylesheet" media="screen" />
 <title>Inserimento Opera</title>
 </head>
 <body>
-	<form action="#" th:action="@{/opera}" th:object="${opera}" method="post">
-	<input type="hidden" th:field="*{id}"/>
-            <div>
-                <div>
-                    <span th:text="#{label.titolo}">Titolo: </span>
-                    <span><input type="text" th:field="*{titolo}" /></span>
-                    <span th:if="${#fields.hasErrors('titolo')}" th:text="#{label.obbligatorio}">Error</span>
-                </div>
-                <div>
-                    <span th:text="#{label.anno}">Anno: </span>
-                    <span><input type="number" th:field="*{anno}" /></span>
-                    <span th:if="${#fields.hasErrors('anno')}" th:text="#{label.numero}">Error</span>
-                </div>
-                <div>
-                    <span th:text="#{label.tecnica}">Tecnica: </span>
-                    <span><input type="text" th:field="*{tecnica}" /></span>
-                </div>
-                <div>
-                    <span th:text="#{label.lunghezza}">Lunghezza: </span>
-                    <span><input type="number" th:field="*{lunghezza}" /></span>
-                    <span th:text="#{label.numero}"></span>
-                </div>
-                <div>
-                    <span th:text="#{label.larghezza}">Larghezza: </span>
-                    <span><input type="number" th:field="*{larghezza}" /></span>
-                    <span th:text="#{label.numero}"></span>
-                </div>
-                <div>
-                    <span th:text="#{label.autore}">Autore: </span>
-                    <span><input type="text" th:field="*{autore}" /></span>
-                    <span th:if="${#fields.hasErrors('autore')}" th:text="#{label.obbligatorio}">Error</span>
-                </div>
-                <div>
-                    <span><button type="submit">Invia</button></span>
-                </div>
-            </div>
-        </form>
+	<form action="#" th:action="@{/opera}" th:object="${opera}"
+		method="post">
+		<input type="hidden" th:field="*{id}" />
+		<div>
+			<div>
+				<span th:text="#{label.titolo}">Titolo: </span> <span><input
+					type="text" th:field="*{titolo}" /></span> <span
+					th:if="${#fields.hasErrors('titolo')}"
+					th:text="#{label.obbligatorio}">Error</span>
+			</div>
+			<div>
+				<span th:text="#{label.anno}">Anno: </span> <span><input
+					type="number" th:field="*{anno}" /></span> <span
+					th:if="${#fields.hasErrors('anno')}" th:text="#{label.numero}">Error</span>
+			</div>
+			<div>
+				<span th:text="#{label.tecnica}">Tecnica: </span> <span><input
+					type="text" th:field="*{tecnica}" /></span>
+			</div>
+			<div>
+				<span th:text="#{label.lunghezza}">Lunghezza: </span> <span><input
+					type="number" th:field="*{lunghezza}" /></span> <span
+					th:if="${#fields.hasErrors('lunghezza')}" th:text="#{label.numero}"></span>
+			</div>
+			<div>
+				<span th:text="#{label.larghezza}">Larghezza: </span> <span><input
+					type="number" th:field="*{larghezza}" /></span> <span
+					th:if="${#fields.hasErrors('larghezza')}" th:text="#{label.numero}"></span>
+			</div>
+			<div>
+				<span th:text="#{label.autore}">Autore: </span> <span><input
+					type="text" th:field="*{autore}" /></span> <span
+					th:if="${#fields.hasErrors('autore')}"
+					th:text="#{label.obbligatorio}">Error</span>
+			</div>
+			<div>
+				<a href="/">Torna all'Homepage</a>
+			</div>
+			<div>
+				<span><button type="submit">Invia</button></span>
+			</div>
+		</div>
+	</form>
 </body>
 </html>

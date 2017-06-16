@@ -4,11 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import it.uniroma3.progettosiw.modello.Opera;
+import it.uniroma3.progettosiw.model.Opera;
 import it.uniroma3.progettosiw.repository.OperaRepository;
 
 @Service
-public class OperaService {
+public class OperaService{
 	
 	@Autowired
 	private OperaRepository operaRepository;
