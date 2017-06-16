@@ -19,7 +19,7 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
 
 		http
 		.authorizeRequests()
-			.antMatchers("/","/galleria").permitAll()
+			.antMatchers("/","/galleria", "/css/**", "/js/**", "/fonts/**").permitAll()
 			.antMatchers("/opera","autore").hasRole("ADMIN")
 		.anyRequest()
 			.authenticated()
