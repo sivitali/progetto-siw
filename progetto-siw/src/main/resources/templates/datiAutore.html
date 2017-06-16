@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" type="text/css" href="bootstrap.css"/>
+<meta charset="ISO-8859-1">
+<title>Dati Autore</title>
+</head>
+<body>
+<div>
+		<p th:text="#{label.nome} + ${opera.nome}" />
+	</div>
+	<div>
+		<p th:text="#{label.cognome} + ${opera.cognome}" />
+	</div>
+	<div>
+		<p th:text="#{label.nazionalita} + ${opera.nazionalita}" />
+	</div>
+	<div>
+		<p th:text="#{label.datadinascita} + ${opera.datadinascita}" />
+	</div>
+	<div>
+		<p th:text="#{label.datadimorte} + ${opera.datadimorte}" />
+	</div>
+
+</body>
+</html>
