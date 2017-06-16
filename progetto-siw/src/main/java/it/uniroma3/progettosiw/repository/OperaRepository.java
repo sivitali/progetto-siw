@@ -8,12 +8,12 @@ import it.uniroma3.progettosiw.model.Opera;
 
 public interface OperaRepository extends CrudRepository<Opera, Long>{
 	
-	List<Opera> findOperaByTitolo(String titolo);
+	List<Opera> findByTitolo(String titolo);
 	
-	List<Opera> findOperaByAnno(int anno);
+	List<Opera> findByAnno(int anno);
 	
-	List<Opera> findOperaByTecnica(String tecnica);
+	List<Opera> findByTecnica(String tecnica);
 	
-	List<Opera> findOperaByAutore(Autore autore);
+	List<Opera> findByAutore(Autore autore);
 	
 }

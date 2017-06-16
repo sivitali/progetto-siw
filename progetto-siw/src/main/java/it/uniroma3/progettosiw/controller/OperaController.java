@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import it.uniroma3.progettosiw.model.Opera;
 import it.uniroma3.progettosiw.service.OperaService;
@@ -45,6 +46,11 @@ public class OperaController {
 	public String getOpera(@PathVariable Long id,Model model){
 		model.addAttribute("opera",this.operaService.findById(id));
 		return "datiOpera";
+	}
+	@RequestMapping(value="/opere/{id}",method=RequestMethod.DELETE)
+	public String deleteOpera(@PathVariable Long id){
+		this.operaService.deleteById(id);
+		return "redirect:/opere";
 	}
 
 }

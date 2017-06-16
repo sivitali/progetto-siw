@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
 <title>Lista Opere</title>
@@ -7,10 +8,12 @@
 <body>
 	<div th:each="opera : ${opere}">
 		<a th:href="@{opere/}+${opera.id}" th:text="${opera.titolo}">Titolo</a>
-		<form th:action="@{opere/}+${opera.id}" th:method="delete">
-			<input type="submit" value="cancella"/>
-		</form>
-	</div>	
+		<div sec:authorize="hasRole('ROLE_ADMIN')">
+			<form th:action="@{opere/}+${opera.id}" th:method="delete">
+				<input type="submit" value="cancella" />
+			</form>
+		</div>
+	</div>
 	<div>
 		<a href="/">Torna all'Homepage</a>
 	</div>
