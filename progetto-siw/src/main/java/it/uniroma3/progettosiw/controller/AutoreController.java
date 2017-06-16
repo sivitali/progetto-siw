@@ -37,6 +37,6 @@ public class AutoreController {
 			model.addAttribute(autore);
 			autoreservice.add(autore); 
 		}
-		return "resultsAutore";               
+		return "datiAutore";               
 	}
 }
