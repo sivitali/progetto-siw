@@ -1,18 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:sec="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
 <title>Homepage Galleria</title>
 </head>
 <body>
-     <h1>GALLERIA D'ARTE</h1>
-	<p><a href="/opera">Inserisci nuova Opera</a></p>
-	
-	<p><a href="/autore">Inserisci nuovo Autore</a></p>
-	
-	<p><a href="/opere">Lista Opere</a></p>
-	
-	<p><a href="/logout">Log Out</a>
-	
+	<h1>GALLERIA D'ARTE</h1>
+	<p>
+		<a href="/opera">Inserisci nuova Opera</a>
+	</p>
+
+	<p>
+		<a href="/autore">Inserisci nuovo Autore</a>
+	</p>
+
+	<p>
+		<a href="/opere">Lista Opere</a>
+	</p>
+
+	<p>
+		<a href="/autori">Lista Autori</a>
+	</p>
+	<div sec:authorize="isAuthenticated()">
+		<p>
+			<a href="/logout">Disconnettiti</a>
+		</p>
+	</div>
 </body>
 </html>
