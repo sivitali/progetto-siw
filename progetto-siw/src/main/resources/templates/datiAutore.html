@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org">
 <head>
 <link rel="stylesheet" type="text/css" href="bootstrap.css" />
 <meta charset="ISO-8859-1">
@@ -26,6 +26,11 @@
 	</div>
 	<div th:each="opera : ${autore.getOpereRealizzate()}">
 		<a th:href="@{/opere/}+${opera.id}" th:text="${opera.titolo}"></a>
+	</div>
+	<div sec:authorize="hasRole('ROLE_ADMIN')">
+		<a class='btn btn-info btn-xs'
+			th:href="@{autore/edit?(id=${autore.id})}"><span
+			class="glyphicon glyphicon-edit"></span>Modifica </a>
 	</div>
 	<div>
 		<p>

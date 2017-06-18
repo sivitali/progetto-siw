@@ -14,7 +14,7 @@
 		<div>
 			<div>
 				<span th:text="#{label.titolo}">Titolo: </span> <span><input
-					type="text" th:field="*{titolo}" th:value="${opera.titolo}"/></span> <span
+					type="text" th:field="*{titolo}" th:value="${opera.titolo}" placeholder="Es. La Gioconda"/></span> <span
 					th:if="${#fields.hasErrors('titolo')}"
 					th:text="#{label.obbligatorio}">Error</span>
 			</div>
@@ -25,7 +25,7 @@
 			</div>
 			<div>
 				<span th:text="#{label.tecnica}">Tecnica: </span> <span><input
-					type="text" th:field="*{tecnica}" th:value="${opera.tecnica}"/></span>
+					type="text" th:field="*{tecnica}" th:value="${opera.tecnica}" placeholder="Es. Olio"/></span>
 			</div>
 			<div>
 				<span th:text="#{label.lunghezza}">Lunghezza: </span> <span><input
@@ -39,7 +39,7 @@
 			</div>
 			<div>
 				<span th:text="#{label.autoreId}">Autore: </span> <span><input
-					type="number" th:field="*{autore}" th:value="${opera.autore}"/></span> <span
+					type="number" th:field="*{autore}" th:value="${opera.autore}" placeholder="Es. 3"/></span> <span
 					th:if="${#fields.hasErrors('autore')}"
 					th:text="#{label.obbligatorio}">Error</span>
 			</div>

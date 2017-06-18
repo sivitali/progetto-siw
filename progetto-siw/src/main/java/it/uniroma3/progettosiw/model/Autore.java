@@ -3,6 +3,7 @@ package it.uniroma3.progettosiw.model;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -33,7 +34,7 @@ public class Autore {
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@Temporal(TemporalType.DATE)
 	private Date dataMorte;
-	@OneToMany(targetEntity=Opera.class, mappedBy="autore")
+	@OneToMany(targetEntity=Opera.class, mappedBy="autore", cascade= CascadeType.REMOVE)
 	private List<Opera> opereRealizzate;
 	
 	protected Autore() {}

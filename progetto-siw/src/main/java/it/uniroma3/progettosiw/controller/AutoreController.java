@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import it.uniroma3.progettosiw.model.Autore;
 import it.uniroma3.progettosiw.service.AutoreService;
@@ -56,5 +57,11 @@ public class AutoreController {
 	public String deleteAutore(@PathVariable Long id){
 		this.autoreService.deleteById(id);
 		return "redirect:/autori";
+	}
+	@GetMapping("autori/autore/edit")
+	public String editOpera(@RequestParam("id") Long id, Model model){
+		Autore autore = this.autoreService.findById(id);
+		model.addAttribute("autore", autore);
+		return "formAutore";
 	}
 }

@@ -8,9 +8,9 @@
 <body>
 	<div th:each="autore : ${autori}">
 		<a th:href="@{autori/}+${autore.id}"
-			th:text="${autore.nome}+${autore.cognome}">Nome e Cognome</a>
+			th:text="${autore.nome}+' '+${autore.cognome}">Nome e Cognome</a>
 		<div sec:authorize="hasRole('ROLE_ADMIN')">
-			<form th:action="@{autore/}+${autore.id}" th:method="delete">
+			<form th:action="@{autori/}+${autore.id}" th:method="delete">
 				<input type="submit" value="Cancella" />
 			</form>
 		</div>
