@@ -3,21 +3,28 @@
 	xmlns:sec="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href="css/riepilogo.css" rel="stylesheet" media="screen" />
 <title>Lista Autori</title>
 </head>
 <body>
-	<div th:each="autore : ${autori}">
-		<a th:href="@{autori/}+${autore.id}"
+	<ul>
+		<li th:each="autore : ${autori}"><a class="btn btn-default"
+			th:href="@{autori/}+${autore.id}"
 			th:text="${autore.nome}+' '+${autore.cognome}">Nome e Cognome</a>
-		<div sec:authorize="hasRole('ROLE_ADMIN')">
-			<form th:action="@{autori/}+${autore.id}" th:method="delete">
-				<input type="submit" value="Cancella" />
-			</form>
-		</div>
-	</div>
+			<div sec:authorize="hasRole('ROLE_ADMIN')">
+				<form th:action="@{autori/}+${autore.id}" th:method="delete">
+					<input type="submit" value="Cancella" />
+				</form>
+			</div></li>
+	</ul>
 	<div>
-		<a href="/">Torna all'Homepage</a>
+		<a href="/" class="btn btn-primary">Torna all'Homepage</a>
 	</div>
 </body>
 </html>

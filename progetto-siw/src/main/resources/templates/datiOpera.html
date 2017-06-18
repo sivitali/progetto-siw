@@ -2,32 +2,39 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="http://www.thymeleaf.org">
 <head>
-<link rel="stylesheet" type="text/css" href="bootstrap.css" />
-<meta charset="ISO-8859-1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="css/riepilogo.css" rel="stylesheet" media="screen" />
 <title>Dati Opera</title>
 </head>
 <body>
 	<h1>Dati opera</h1>
-	<div>
-		<p th:text="#{label.titolo} + ${opera.titolo}" />
-	</div>
-	<div>
-		<p th:text="#{label.anno} + ${opera.anno}" />
-	</div>
-	<div>
-		<p th:text="#{label.tecnica} + ${opera.tecnica}" />
-	</div>
-	<div>
-		<p th:text="#{label.lunghezza} + ${opera.lunghezza}" />
-	</div>
-	<div>
-		<p th:text="#{label.larghezza} + ${opera.larghezza}" />
-	</div>
-	<div>
-		<span th:text="#{label.autore}"></span> <a
+	<ul>
+		<li>
+			<p th:text="#{label.titolo} + ${opera.titolo}" />
+		</li>
+		<li>
+			<p th:text="#{label.anno} + ${opera.anno}" />
+		</li>
+		<li>
+			<p th:text="#{label.tecnica} + ${opera.tecnica}" />
+		</li>
+		<li>
+			<p th:text="#{label.lunghezza} + ${opera.lunghezza}" />
+		</li>
+		<li>
+			<p th:text="#{label.larghezza} + ${opera.larghezza}" />
+		</li>
+		<li><span th:text="#{label.autore}"></span> <a
 			th:href="@{/autori/}+${opera.autore.id}"
-			th:text="${opera.autore.nome}+' '+${opera.autore.cognome}"></a>
-	</div>
+			th:text="${opera.autore.nome}+' '+${opera.autore.cognome}"></a></li>
+	</ul>
 	<div sec:authorize="hasRole('ROLE_ADMIN')">
 		<a class='btn btn-info btn-xs'
 			th:href="@{opera/edit?(id=${opera.id})}"><span
@@ -35,7 +42,7 @@
 	</div>
 	<div>
 		<p>
-			<a href="/">Torna all'Homepage</a>
+			<a href="/" class="btn btn-primary">Torna all'Homepage</a>
 		</p>
 	</div>
 </body>

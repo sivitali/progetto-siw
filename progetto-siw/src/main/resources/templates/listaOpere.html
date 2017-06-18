@@ -3,20 +3,27 @@
 	xmlns:sec="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href="css/riepilogo.css" rel="stylesheet" media="screen" />
 <title>Lista Opere</title>
 </head>
 <body>
-	<div th:each="opera : ${opere}">
-		<a th:href="@{opere/}+${opera.id}" th:text="${opera.titolo}">Titolo</a>
-		<div sec:authorize="hasRole('ROLE_ADMIN')">
-			<form th:action="@{opere/}+${opera.id}" th:method="delete">
-				<input type="submit" value="Cancella" />
-			</form>
-		</div>
-	</div>
+	<ul>
+		<li th:each="opera : ${opere}"><a class="btn btn-default"
+			th:href="@{opere/}+${opera.id}" th:text="${opera.titolo}">Titolo</a>
+			<div sec:authorize="hasRole('ROLE_ADMIN')">
+				<form th:action="@{opere/}+${opera.id}" th:method="delete">
+					<input type="submit" value="Cancella" />
+				</form>
+			</div></li>
+	</ul>
 	<div>
-		<a href="/">Torna all'Homepage</a>
+		<a href="/" class="btn btn-primary">Torna all'Homepage</a>
 	</div>
 </body>
 </html>

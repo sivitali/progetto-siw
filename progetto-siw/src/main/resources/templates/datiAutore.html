@@ -1,32 +1,42 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org">
 <head>
-<link rel="stylesheet" type="text/css" href="bootstrap.css" />
-<meta charset="ISO-8859-1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="css/riepilogo.css" rel="stylesheet" media="screen" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Dati Autore</title>
 </head>
 <body>
-	<div>
-		<p th:text="#{label.nome} + ${autore.nome}" />
-	</div>
-	<div>
-		<p th:text="#{label.cognome} + ${autore.cognome}" />
-	</div>
-	<div>
-		<p th:text="#{label.nazionalita} + ${autore.nazionalita}" />
-	</div>
-	<div>
-		<p th:text="#{label.dataNascita} + ${autore.dataNascita}" />
-	</div>
-	<div>
-		<p th:text="#{label.dataMorte} + ${autore.dataMorte}" />
-	</div>
-	<div>
-		<span th:text="#{label.opere}"></span>
-	</div>
-	<div th:each="opera : ${autore.getOpereRealizzate()}">
-		<a th:href="@{/opere/}+${opera.id}" th:text="${opera.titolo}"></a>
-	</div>
+	<h1>Dati opera</h1>
+	<ul>
+		<li>
+			<p th:text="#{label.nome} + ${autore.nome}" />
+		</li>
+		<li>
+			<p th:text="#{label.cognome} + ${autore.cognome}" />
+		</li>
+		<li>
+			<p th:text="#{label.nazionalita} + ${autore.nazionalita}" />
+		</li>
+		<li>
+			<p th:text="#{label.dataNascita} + ${autore.dataNascita}" />
+		</li>
+		<li>
+			<p th:text="#{label.dataMorte} + ${autore.dataMorte}" />
+		</li>
+		<li><span th:text="#{label.opere}"></span>
+			<ul>
+				<li th:each="opera : ${autore.getOpereRealizzate()}"><a
+					th:href="@{/opere/}+${opera.id}" th:text="${opera.titolo}"></a></li>
+			</ul>
+		</li>
+	</ul>
 	<div sec:authorize="hasRole('ROLE_ADMIN')">
 		<a class='btn btn-info btn-xs'
 			th:href="@{autore/edit?(id=${autore.id})}"><span
@@ -34,7 +44,7 @@
 	</div>
 	<div>
 		<p>
-			<a href="/">Torna all'Homepage</a>
+			<a href="/" class="btn btn-primary">Torna all'Homepage</a>
 		</p>
 	</div>
 </body>
