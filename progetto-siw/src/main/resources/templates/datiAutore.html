@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<link rel="stylesheet" type="text/css" href="bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="bootstrap.css" />
 <meta charset="ISO-8859-1">
 <title>Dati Autore</title>
 </head>
 <body>
-<div>
+	<div>
 		<p th:text="#{label.nome} + ${autore.nome}" />
 	</div>
 	<div>
@@ -21,6 +21,16 @@
 	<div>
 		<p th:text="#{label.dataMorte} + ${autore.dataMorte}" />
 	</div>
-
+	<div>
+		<span th:text="#{label.opere}"></span>
+	</div>
+	<div th:each="opera : ${autore.getOpereRealizzate()}">
+		<a th:href="@{/opere/}+${opera.id}" th:text="${opera.titolo}"></a>
+	</div>
+	<div>
+		<p>
+			<a href="/">Torna all'Homepage</a>
+		</p>
+	</div>
 </body>
 </html>

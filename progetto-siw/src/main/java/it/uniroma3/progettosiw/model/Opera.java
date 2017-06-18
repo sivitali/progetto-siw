@@ -8,6 +8,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+
 @Entity
 @Table(name="opere")
 public class Opera {
@@ -22,17 +23,18 @@ public class Opera {
 	private String tecnica;
 	private int lunghezza;
 	private int larghezza;
-	@ManyToOne
+	@ManyToOne(targetEntity=Autore.class)
 	private Autore autore;
-	
+		
 	protected Opera(){}
 
-	public Opera (String titolo, int anno, String tecnica, int lunghezza, int larghezza){
+	public Opera (String titolo, int anno, String tecnica, int lunghezza, int larghezza, Autore autore){
 		this.titolo = titolo;
 		this.anno = anno;
 		this.tecnica = tecnica;
 		this.lunghezza = lunghezza;
 		this.larghezza = larghezza;
+		this.autore = autore;
 	}
 
 	public Long getId() {

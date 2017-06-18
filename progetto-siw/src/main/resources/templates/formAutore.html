@@ -14,35 +14,35 @@
 		<div>
 			<div>
 				<span th:text="#{label.nome}">Nome: </span> <span><input
-					type="text" th:field="*{nome}" /></span> <span
+					type="text" th:field="*{nome}" th:value="${autore.nome}"/></span> <span
 					th:if="${#fields.hasErrors('nome')}"
 					th:text="#{label.obbligatorio}">Error</span>
 			</div>
 			<div>
 				<span th:text="#{label.cognome}">Cognome: </span> <span><input
-					type="text" th:field="*{cognome}" /></span> <span
+					type="text" th:field="*{cognome}" th:value="${autore.cognome}"/></span> <span
 					th:if="${#fields.hasErrors('cognome')}"
 					th:text="#{label.obbligatorio}">Error</span>
 			</div>
 			<div>
 				<span th:text="#{label.nazionalita}">Nazionalita: </span> <span><input
-					type="text" th:field="*{nazionalita}" /></span>
+					type="text" th:field="*{nazionalita}" th:value="${autore.nazionalita}"/></span>
 			</div>
 			<div>
 				<span th:text="#{label.dataNascita}">Data di Nascita: </span> <span><input
-					type="date" th:field="*{dataNascita}" /></span> <span
+					type="date" th:field="*{dataNascita}" th:value="${autore.dataNascita}"/></span> <span
 					th:if="${#fields.hasErrors('dataNascita')}" th:text="#{label.data}"></span>
 			</div>
 			<div>
 				<span th:text="#{label.dataMorte}">Data di Morte: </span> <span><input
-					type="date" th:field="*{dataMorte}" /></span> <span
+					type="date" th:field="*{dataMorte}" th:value="${autore.dataMorte}"/></span> <span
 					th:if="${#fields.hasErrors('dataNascita')}" th:text="#{label.data}"></span>
 			</div>
 			<div>
 				<a href="/">Torna all'Homepage</a>
 			</div>
 			<div>
-				<span><button type="submit">Submit</button></span>
+				<span><button type="submit">Invia</button></span>
 			</div>
 		</div>
 	</form>

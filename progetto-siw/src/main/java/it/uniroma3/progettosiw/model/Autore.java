@@ -33,7 +33,7 @@ public class Autore {
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@Temporal(TemporalType.DATE)
 	private Date dataMorte;
-	@OneToMany(mappedBy="autore")
+	@OneToMany(targetEntity=Opera.class, mappedBy="autore")
 	private List<Opera> opereRealizzate;
 	
 	protected Autore() {}

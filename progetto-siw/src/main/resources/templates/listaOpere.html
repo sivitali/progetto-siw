@@ -10,7 +10,7 @@
 		<a th:href="@{opere/}+${opera.id}" th:text="${opera.titolo}">Titolo</a>
 		<div sec:authorize="hasRole('ROLE_ADMIN')">
 			<form th:action="@{opere/}+${opera.id}" th:method="delete">
-				<input type="submit" value="cancella" />
+				<input type="submit" value="Cancella" />
 			</form>
 		</div>
 	</div>

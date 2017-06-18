@@ -52,5 +52,14 @@ public class OperaController {
 		this.operaService.deleteById(id);
 		return "redirect:/opere";
 	}
-
+	@RequestMapping(value="modificaOpera/{id}", method=RequestMethod.PUT)
+	public String modifcaOpera(@PathVariable ("id") Opera opera, Model model, BindingResult bindingResult){
+		if(bindingResult.hasErrors()) {
+	        model.addAttribute(opera);
+	        return "opere/modificaOpera";
+	    } else {
+	        this.operaService.add(opera);
+	    }
+	    return "redirect:/opere/" + opera.getId() + "/" + opera.getTitolo();
+	}
 }

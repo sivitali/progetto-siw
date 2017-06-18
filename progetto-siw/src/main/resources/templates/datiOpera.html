@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org">
 <head>
 <link rel="stylesheet" type="text/css" href="bootstrap.css" />
 <meta charset="ISO-8859-1">
@@ -23,10 +24,19 @@
 		<p th:text="#{label.larghezza} + ${opera.larghezza}" />
 	</div>
 	<div>
-		<p th:text="#{label.autore} + ${opera.autore}" />
+		<span th:text="#{label.autore}"></span> <a
+			th:href="@{/autori/}+${opera.autore.id}"
+			th:text="${opera.autore.nome}+' '+${opera.autore.cognome}"></a>
+	</div>
+	<div sec:authorize="hasRole('ROLE_ADMIN')">
+		<form th:action="@{modificaOpera/}+${opera.id}" th:method="put">
+			<input type="submit" value="Modifica" />
+		</form>
 	</div>
 	<div>
-		<a href="/">Torna all'Homepage</a>
+		<p>
+			<a href="/">Torna all'Homepage</a>
+		</p>
 	</div>
 </body>
 </html>

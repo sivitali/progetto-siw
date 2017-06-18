@@ -8,7 +8,7 @@
 <title>Inserimento Opera</title>
 </head>
 <body>
-	<form action="#" th:action="@{/opera}" th:object="${opera}"
+	<form action="#" th:action="@{/modificaOpera}" th:object="${opera}"
 		method="post">
 		<input type="hidden" th:field="*{id}" />
 		<div>
@@ -38,8 +38,8 @@
 					th:if="${#fields.hasErrors('larghezza')}" th:text="#{label.numero}"></span>
 			</div>
 			<div>
-				<span th:text="#{label.autoreId}">Autore: </span> <span><input
-					type="number" th:field="*{autore}" th:value="${opera.autore}"/></span> <span
+				<span th:text="#{label.autore}">Autore: </span> <span><input
+					type="text" th:field="*{autore}" th:value="${opera.autore}"/></span> <span
 					th:if="${#fields.hasErrors('autore')}"
 					th:text="#{label.obbligatorio}">Error</span>
 			</div>
