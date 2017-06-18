@@ -23,6 +23,7 @@ public class Opera {
 	private String tecnica;
 	private int lunghezza;
 	private int larghezza;
+	@NotNull
 	@ManyToOne(targetEntity=Autore.class)
 	private Autore autore;
 		
@@ -92,6 +93,5 @@ public class Opera {
 	public void setAutore(Autore autore) {
 		this.autore = autore;
 	}
-
 
 }

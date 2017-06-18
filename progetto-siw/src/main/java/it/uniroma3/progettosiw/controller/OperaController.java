@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import it.uniroma3.progettosiw.model.Opera;
 import it.uniroma3.progettosiw.service.OperaService;
@@ -52,14 +53,10 @@ public class OperaController {
 		this.operaService.deleteById(id);
 		return "redirect:/opere";
 	}
-	@RequestMapping(value="modificaOpera/{id}", method=RequestMethod.PUT)
-	public String modifcaOpera(@PathVariable ("id") Opera opera, Model model, BindingResult bindingResult){
-		if(bindingResult.hasErrors()) {
-	        model.addAttribute(opera);
-	        return "opere/modificaOpera";
-	    } else {
-	        this.operaService.add(opera);
-	    }
-	    return "redirect:/opere/" + opera.getId() + "/" + opera.getTitolo();
+	@GetMapping("opere/opera/edit")
+	public String editOpera(@RequestParam("id") Long id, Model model){
+		Opera opera = this.operaService.findById(id);
+		model.addAttribute("opera", opera);
+		return "formOpera";
 	}
 }

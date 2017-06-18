@@ -21,10 +21,11 @@
 	<p>
 		<a href="/autori">Lista Autori</a>
 	</p>
+	<div sec:authorize="isAnonymous()">
+		<a href="/login">Connettiti</a>
+	</div>
 	<div sec:authorize="isAuthenticated()">
-		<p>
-			<a href="/logout">Disconnettiti</a>
-		</p>
+		<a href="/logout">Disconnettiti</a>
 	</div>
 </body>
 </html>
