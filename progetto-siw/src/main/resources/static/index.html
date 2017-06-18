@@ -34,37 +34,41 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:sec="http://www.thymeleaf.org">
 <head>
-  <title>Galleria d'arte</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link href="css/riepilogo.css" rel="stylesheet" media="screen" />
+<title>Galleria d'arte</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="css/riepilogo.css" rel="stylesheet" media="screen" />
 </head>
 <body>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <ul class="nav navbar-nav">
-    <li><a href="/opera">Inserisci nuova Opera</a></li>    
-      <li><a href="/autore">Inserisci nuovo Autore</a></li>           
-      <li><a href="/opere">Mostra Opere</a></li>
-      <li><a href="/autori">Mostra Autori</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li> <div sec:authorize="isAnonymous()"><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Connettiti</a></li>
-    </ul>
-     <ul class="nav navbar-nav navbar-right">
-      <li> <div sec:authorize="isAuthenticated()"><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Disconnettiti</a></li>
-  </div>
-</nav>
-  
-<div class="container">
-  <h3> <p align="center">Benvenuto nella Galleria d'arte </p></h3>
-</div>
-
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<ul class="nav navbar-nav">
+				<li><a href="/opera">Inserisci nuova Opera</a></li>
+				<li><a href="/autore">Inserisci nuovo Autore</a></li>
+				<li><a href="/opere">Mostra Opere</a></li>
+				<li><a href="/autori">Mostra Autori</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li sec:authorize="isAnonymous()"><a href="/login"><span
+						class="glyphicon glyphicon-log-in"></span> Connettiti</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li sec:authorize="isAuthenticated()"><a href="/logout"><span
+						class="glyphicon glyphicon-log-out"></span> Disconnettiti</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container">
+			<p align="center">Benvenuto nella Galleria d'arte</p>
+	</div>
 </body>
 </html>

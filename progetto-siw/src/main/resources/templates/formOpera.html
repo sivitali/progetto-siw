@@ -1,117 +1,87 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href="css/riepilogo.css" rel="stylesheet" media="screen" />
-<title>Inserimento Opera</title>
-</head>
-<body>
-	<form action="#" th:action="@{/opera}" th:object="${opera}"
-		method="post">
-		<input type="hidden" th:field="*{id}"/>
-		<div>
-			<div>
-				<span th:text="#{label.titolo}">Titolo: </span> <span><input
-					type="text" th:field="*{titolo}" th:value="${opera.titolo}" placeholder="Es. La Gioconda"/></span> <span
-					th:if="${#fields.hasErrors('titolo')}"
-					th:text="#{label.obbligatorio}">Error</span>
-			</div>
-			<div>
-				<span th:text="#{label.anno}">Anno: </span> <span><input
-					type="number" th:field="*{anno}" th:value="${opera.anno}"/></span> <span
-					th:if="${#fields.hasErrors('anno')}" th:text="#{label.numero}">Error</span>
-			</div>
-			<div>
-				<span th:text="#{label.tecnica}">Tecnica: </span> <span><input
-					type="text" th:field="*{tecnica}" th:value="${opera.tecnica}" placeholder="Es. Olio"/></span>
-			</div>
-			<div>
-				<span th:text="#{label.lunghezza}">Lunghezza: </span> <span><input
-					type="number" th:field="*{lunghezza}" th:value="${opera.lunghezza}"/></span> <span
-					th:if="${#fields.hasErrors('lunghezza')}" th:text="#{label.numero}"></span>
-			</div>
-			<div>
-				<span th:text="#{label.larghezza}">Larghezza: </span> <span><input
-					type="number" th:field="*{larghezza}" th:value="${opera.larghezza}"/></span> <span
-					th:if="${#fields.hasErrors('larghezza')}" th:text="#{label.numero}"></span>
-			</div>
-			<div>
-				<span th:text="#{label.autoreId}">Autore: </span> <span><input
-					type="number" th:field="*{autore}" th:value="${opera.autore}" placeholder="Es. 3"/></span> <span
-					th:if="${#fields.hasErrors('autore')}"
-					th:text="#{label.obbligatorio}">Error</span>
-			</div>
-			<div>
-				<a href="/">Torna all'Homepage</a>
-			</div>
-			<div>
-				<span><button type="submit">Invia</button></span>
-			</div>
-		</div>
-	</form>
-</body>
-</html>
-
-
-
-<!DOCTYPE html>
-<html>
-<head>
-<link rel="stylesheet" href="bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Inserimento dati Opera</title>
 </head>
 <body>
 	<div class="container">
 		<h2>Inserire dati Opera</h2>
-		<form method="post" action="controller" class="form-horizontal">
+		<form action="#" th:action="@{/opera}" th:object="${opera}"
+			method="post">
+			<input type="hidden" th:field="*{id}" />
 			<div class="form-group col-sm-12">
-				<label class="col-sm-2 control-label">Titolo:</label>
-				<div class="col-sm-8"><input class="form-control" type="text" name="titolo"
-					value=""></div>
-				<div class="col-sm-2"></div>
-			</div>
-			<div class="form-group col-sm-12">
-				<label class="col-sm-2 control-label">Anno:</label>
-				<div class="col-sm-8"><input class="form-control" type="text" name="anno"
-					value=""></div>
-				<div class="col-sm-2"></div>
-			</div>
-			<div class="form-group col-sm-12">
-				<label class="col-sm-2 control-label">Tecnica: </label>
-				<div class="col-sm-8"><input class="form-control" type="text" name="tecnica"
-					value=""></div>
+				<label class="col-sm-2 control-label" th:text="#{label.titolo}"></label>
+				<div class="col-sm-8">
+					<span th:if="${#fields.hasErrors('titolo')}"
+						th:text="#{label.obbligatorio}">Error</span> <input
+						class="form-control" type="text" th:field="*{titolo}"
+						th:value="${opera.titolo}" placeholder="Es. La Gioconda" />
+				</div>
 				<div class="col-sm-2"></div>
 			</div>
 			<div class="form-group col-sm-12">
-				<label class="col-sm-2 control-label">Lunghezza:</label>
-				<div class="col-sm-8"><input class="form-control" type="text" name="lunghezza"
-					value=""></div>
+				<label class="col-sm-2 control-label" th:text="#{label.anno}"></label>
+				<div class="col-sm-8">
+					<span th:if="${#fields.hasErrors('anno')}"
+						th:text="#{label.numero}">Error</span> <input class="form-control"
+						type="number" th:field="*{anno}" th:value="${opera.anno}" />
+				</div>
 				<div class="col-sm-2"></div>
 			</div>
-            <div class="form-group col-sm-12">
-				<label class="col-sm-2 control-label">Larghezza:</label>
-				<div class="col-sm-8"><input class="form-control" type="text" name="larghezza"
-					value=""></div>
+			<div class="form-group col-sm-12">
+				<label class="col-sm-2 control-label" th:text="#{label.tecnica}"></label>
+				<div class="col-sm-8">
+					<input class="form-control" type="text" th:field="*{tecnica}"
+						th:value="${opera.tecnica}" placeholder="Es. Olio" />
+				</div>
 				<div class="col-sm-2"></div>
 			</div>
-            <div class="form-group col-sm-12">
-				<label class="col-sm-2 control-label">Id Autore:</label>
-				<div class="col-sm-8"><input class="form-control" type="text" name="id"
-					value=""></div>
+			<div class="form-group col-sm-12">
+				<label class="col-sm-2 control-label" th:text="#{label.lunghezza}">:</label>
+				<div class="col-sm-8">
+					<span th:if="${#fields.hasErrors('lunghezza')}"
+						th:text="#{label.numero}"></span> <input class="form-control"
+						type="number" th:field="*{lunghezza}"
+						th:value="${opera.lunghezza}" />
+				</div>
+				<div class="col-sm-2"></div>
+			</div>
+			<div class="form-group col-sm-12">
+				<label class="col-sm-2 control-label" th:text="#{label.larghezza}">:</label>
+				<div class="col-sm-8">
+					<span th:if="${#fields.hasErrors('larghezza')}"
+						th:text="#{label.numero}"></span> <input class="form-control"
+						type="number" th:field="*{larghezza}"
+						th:value="${opera.larghezza}" />
+				</div>
+				<div class="col-sm-2"></div>
+			</div>
+			<div class="form-group col-sm-12">
+				<label class="col-sm-2 control-label" th:text="#{label.autoreId}">:</label>
+				<div class="col-sm-8">
+					<span th:if="${#fields.hasErrors('autore')}"
+						th:text="#{label.obbligatorio}">Error</span> <input
+						class="form-control" type="number" th:field="*{autore}"
+						th:value="${opera.autore}" placeholder="Es. 3" />
+				</div>
 				<div class="col-sm-2"></div>
 			</div>
 			<div class="form-group col-sm-12">
 				<div class="col-sm-offset-2 col-sm-1">
-					<input class="btn btn-primary" type="submit" value="Invia"></div>
-				
+					<input class="btn btn-primary" type="submit" value="Invia">
+				</div>
+
 			</div>
 		</form>
-	<a href="index" class="btn btn-primary">Torna all'Homepage</a>
+		<a href="/" class="btn btn-primary">Torna all'Homepage</a>
 	</div>
 </body>
 </html>

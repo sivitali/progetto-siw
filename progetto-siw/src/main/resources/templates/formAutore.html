@@ -1,105 +1,78 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href="css/riepilogo.css" rel="stylesheet" media="screen" />
-<title>Inserimento Autore</title>
-</head>
-<body>
-	<form action="#" th:action="@{/autore}" th:object="${autore}"
-		method="post">
-		<input type="hidden" th:field="*{id}"/>
-		<div>
-			<div>
-				<span th:text="#{label.nome}">Nome: </span> <span><input
-					type="text" th:field="*{nome}" th:value="${autore.nome}" placeholder="Es. Mario"/></span> <span
-					th:if="${#fields.hasErrors('nome')}"
-					th:text="#{label.obbligatorio}">Error</span>
-			</div>
-			<div>
-				<span th:text="#{label.cognome}">Cognome: </span> <span><input
-					type="text" th:field="*{cognome}" th:value="${autore.cognome}" placeholder="Es. Rossi"/></span> <span
-					th:if="${#fields.hasErrors('cognome')}"
-					th:text="#{label.obbligatorio}">Error</span>
-			</div>
-			<div>
-				<span th:text="#{label.nazionalita}">Nazionalita: </span> <span><input
-					type="text" th:field="*{nazionalita}" th:value="${autore.nazionalita}" placeholder="Es. Italia"/></span>
-			</div>
-			<div>
-				<span th:text="#{label.dataNascita}">Data di Nascita: </span> <span><input
-					type="text" th:field="*{dataNascita}" th:value="${autore.dataNascita}" placeholder="gg/mm/aaaa"/></span> <span
-					th:if="${#fields.hasErrors('dataNascita')}" th:text="#{label.data}"></span>
-			</div>
-			<div>
-				<span th:text="#{label.dataMorte}">Data di Morte: </span> <span><input
-					type="text" th:field="*{dataMorte}" th:value="${autore.dataMorte}" placeholder="gg/mm/aaaa"/></span> <span
-					th:if="${#fields.hasErrors('dataNascita')}" th:text="#{label.data}"></span>
-			</div>
-			<div>
-				<a href="/">Torna all'Homepage</a>
-			</div>
-			<div>
-				<span><button type="submit">Invia</button></span>
-			</div>
-		</div>
-	</form>
-</body>
-</html>
-
-
-!DOCTYPE html>
-<html>
-<head>
-<link rel="stylesheet" href="bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Inserire dati Autore</title>
 </head>
 <body>
 	<div class="container">
 		<h2>Inserire dati Autore</h2>
-		<form method="post" action="controller" class="form-horizontal">
+		<form action="#" th:action="@{/autore}" th:object="${autore}"
+			method="post">
+			<input type="hidden" th:field="*{id}" />
 			<div class="form-group col-sm-12">
 				<label class="col-sm-2 control-label">Nome:</label>
-				<div class="col-sm-8"><input class="form-control" type="text" name="nome"
-					value=""></div>
+				<div class="col-sm-8">
+					<span th:if="${#fields.hasErrors('nome')}"
+						th:text="#{label.obbligatorio}">Error</span> <input
+						class="form-control" type="text" th:field="*{nome}"
+						th:value="${autore.nome}" placeholder="Es. Mario" />
+				</div>
 				<div class="col-sm-2"></div>
 			</div>
 			<div class="form-group col-sm-12">
 				<label class="col-sm-2 control-label">Cognome:</label>
-				<div class="col-sm-8"><input class="form-control" type="text" name="cognome"
-					value=""></div>
+				<div class="col-sm-8">
+					<span th:if="${#fields.hasErrors('cognome')}"
+						th:text="#{label.obbligatorio}">Error</span> <input
+						class="form-control" type="text" th:field="*{cognome}"
+						th:value="${autore.cognome}" placeholder="Es. Rossi" />
+				</div>
 				<div class="col-sm-2"></div>
 			</div>
 			<div class="form-group col-sm-12">
 				<label class="col-sm-2 control-label">Nazionalita: </label>
-				<div class="col-sm-8"><input class="form-control" type="text" name="nazionalita"
-					value=""></div>
+				<div class="col-sm-8">
+					<input class="form-control" type="text" th:field="*{nazionalita}"
+						th:value="${autore.nazionalita}" placeholder="Es. Italia" />
+				</div>
 				<div class="col-sm-2"></div>
 			</div>
 			<div class="form-group col-sm-12">
 				<label class="col-sm-2 control-label">Data di nascita:</label>
-				<div class="col-sm-8"><input class="form-control" type="text" name="datadinascita"
-					value=""></div>
+				<div class="col-sm-8">
+					<span th:if="${#fields.hasErrors('dataNascita')}"
+						th:text="#{label.data}"></span> <input class="form-control"
+						type="text" th:field="*{dataNascita}"
+						th:value="${autore.dataNascita}" placeholder="gg/mm/aaaa" />
+				</div>
 				<div class="col-sm-2"></div>
 			</div>
-            <div class="form-group col-sm-12">
+			<div class="form-group col-sm-12">
 				<label class="col-sm-2 control-label">Data di morte:</label>
-				<div class="col-sm-8"><input class="form-control" type="text" name="datadimorte"
-					value=""></div>
+				<div class="col-sm-8">
+					<span th:if="${#fields.hasErrors('dataMorte')}"
+						th:text="#{label.data}"></span> <input class="form-control"
+						type="text" th:field="*{dataMorte}" th:value="${autore.dataMorte}"
+						placeholder="gg/mm/aaaa" />
+				</div>
 				<div class="col-sm-2"></div>
 			</div>
-            <div class="form-group col-sm-12">
+			<div class="form-group col-sm-12">
 				<div class="col-sm-offset-2 col-sm-1">
-					<input class="btn btn-primary" type="submit" value="Invia"></div>
-				
+					<input class="btn btn-primary" type="submit" value="Invia">
+				</div>
+
 			</div>
 		</form>
-	<a href="index" class="btn btn-primary">Torna all'Homepage</a>
+		<a href="/" class="btn btn-primary">Torna all'Homepage</a>
 	</div>
 </body>
 </html>

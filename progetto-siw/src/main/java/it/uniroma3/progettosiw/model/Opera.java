@@ -6,7 +6,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 
 @Entity
@@ -17,8 +19,10 @@ public class Opera {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	@NotNull
+	@Size(min=1)
 	private String titolo;
 	@NotNull
+	@Min(1)
 	private int anno;
 	private String tecnica;
 	private int lunghezza;
