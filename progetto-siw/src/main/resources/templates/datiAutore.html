@@ -13,34 +13,41 @@
 <title>Dati Autore</title>
 </head>
 <body>
-	<h1>Dati opera</h1>
+	<h1>Dati Autore</h1>
 	<ul>
 		<li>
-			<p th:text="#{label.nome} + ${autore.nome}" />
+			<p th:text="#{label.id}+' '+${autore.id}" />
 		</li>
 		<li>
-			<p th:text="#{label.cognome} + ${autore.cognome}" />
+			<p th:text="#{label.nome}+' '+${autore.nome}" />
 		</li>
 		<li>
-			<p th:text="#{label.nazionalita} + ${autore.nazionalita}" />
+			<p th:text="#{label.cognome}+' '+${autore.cognome}" />
 		</li>
 		<li>
-			<p th:text="#{label.dataNascita} + ${autore.dataNascita}" />
+			<p th:text="#{label.nazionalita}+' '+${autore.nazionalita}" />
 		</li>
 		<li>
-			<p th:text="#{label.dataMorte} + ${autore.dataMorte}" />
+			<p th:text="#{label.dataNascita}+' '+${autore.dataNascita}" />
+		</li>
+		<li>
+			<p th:text="#{label.dataMorte}+' '+${autore.dataMorte}" />
 		</li>
 		<li><span th:text="#{label.opere}"></span>
 			<ul>
 				<li th:each="opera : ${autore.getOpereRealizzate()}"><a
 					th:href="@{/opere/}+${opera.id}" th:text="${opera.titolo}"></a></li>
-			</ul>
-		</li>
+			</ul></li>
 	</ul>
 	<div sec:authorize="hasRole('ROLE_ADMIN')">
 		<a class='btn btn-info btn-xs'
 			th:href="@{autore/edit?(id=${autore.id})}"><span
 			class="glyphicon glyphicon-edit"></span>Modifica </a>
+	</div>
+	<div>
+		<p>
+			<a href="/autori" class="btn btn-default">Torna agli Autori</a>
+		</p>
 	</div>
 	<div>
 		<p>

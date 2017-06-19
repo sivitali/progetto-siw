@@ -23,31 +23,32 @@ public class InizializzatoreDatabase  implements ApplicationRunner {
 	@Autowired
 	private AutoreRepository autoreRepository;
 	
+	//Inizialliza il database con delle Entità
 	@Override
 	public void run(ApplicationArguments arg0) throws Exception {
 		DateFormat format = new SimpleDateFormat("dd-MM-yyyy");
-		Autore autoreTest1 = new Autore("nomeAutore1", "cognomeAutore1", "nazionalita1", format.parse("01-01-2001"), format.parse("02-02-2002"));
-		Autore autoreTest2 = new Autore("nomeAutore2", "cognomeAutore2", "nazionalita2", format.parse("03-03-2003"), format.parse("04-04-2004"));
+		Autore daVinci = new Autore("Leonardo", "Da Vinci", "Italia", format.parse("15-04-1452"), format.parse("02-05-1519"));
+		Autore botticelli = new Autore("Sandro", "Botticelli", "Italia", format.parse("01-03-1445"), format.parse("17-05-1510"));
 		
-		Opera operaTest1 = new Opera("titoloOpera1", 100, "tecnicaOpera1", 10, 20, autoreTest1);
-		Opera operaTest2 = new Opera("titoloOpera2", 200, "tecnicaOpera2", 20, 40, autoreTest1);
-		Opera operaTest3 = new Opera("titoloOpera3", 300, "tecnicaOpera3", 30, 60, autoreTest2);
+		Opera damaErmellino = new Opera("Dama con l'ermellino", 1490, "Olio su tavola", 55, 40, daVinci);
+		Opera gioconda = new Opera("La Gioconda", 1506, "Olio su tavola", 77, 53, daVinci);
+		Opera nascitaVenere = new Opera("Nascita di Venere", 1485, "Tempera su tela", 172, 278, botticelli);
 		
-		List<Opera> opereAutore1 = new ArrayList<Opera>();
-		List<Opera> opereAutore2 = new ArrayList<Opera>();
+		List<Opera> opereDaVinci = new ArrayList<Opera>();
+		List<Opera> opereBotticelli = new ArrayList<Opera>();
 		
-		opereAutore1.add(operaTest1);
-		opereAutore1.add(operaTest2);
-		opereAutore2.add(operaTest3);
+		opereDaVinci.add(damaErmellino);
+		opereDaVinci.add(gioconda);
+		opereBotticelli.add(nascitaVenere);
 		
-		autoreTest1.setOpereRealizzate(opereAutore1);
-		autoreTest2.setOpereRealizzate(opereAutore2);
+		daVinci.setOpereRealizzate(opereDaVinci);
+		botticelli.setOpereRealizzate(opereBotticelli);
 		
-		this.autoreRepository.save(autoreTest1);
-		this.autoreRepository.save(autoreTest2);
-		this.operaRepository.save(operaTest1);
-		this.operaRepository.save(operaTest2);
-		this.operaRepository.save(operaTest3);
+		this.autoreRepository.save(daVinci);
+		this.autoreRepository.save(botticelli);
+		this.operaRepository.save(damaErmellino);
+		this.operaRepository.save(gioconda);
+		this.operaRepository.save(nascitaVenere);
 
 		
 	}

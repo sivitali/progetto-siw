@@ -25,20 +25,20 @@ public class Opera {
 	@Min(1)
 	private int anno;
 	private String tecnica;
+	private int altezza;
 	private int lunghezza;
-	private int larghezza;
 	@NotNull
 	@ManyToOne(targetEntity=Autore.class)
-	private Autore autore;
+	private Autore autore;					//Autore dell'Opera
 		
 	protected Opera(){}
 
-	public Opera (String titolo, int anno, String tecnica, int lunghezza, int larghezza, Autore autore){
+	public Opera (String titolo, int anno, String tecnica, int altezza, int lunghezza, Autore autore){
 		this.titolo = titolo;
 		this.anno = anno;
 		this.tecnica = tecnica;
+		this.altezza = altezza;
 		this.lunghezza = lunghezza;
-		this.larghezza = larghezza;
 		this.autore = autore;
 	}
 
@@ -74,20 +74,20 @@ public class Opera {
 		this.tecnica = tecnica;
 	}
 
+	public int getAltezza() {
+		return altezza;
+	}
+
+	public void setAltezza(int altezza) {
+		this.altezza = altezza;
+	}
+
 	public int getLunghezza() {
 		return lunghezza;
 	}
 
 	public void setLunghezza(int lunghezza) {
 		this.lunghezza = lunghezza;
-	}
-
-	public int getLarghezza() {
-		return larghezza;
-	}
-
-	public void setLarghezza(int larghezza) {
-		this.larghezza = larghezza;
 	}
 
 	public Autore getAutore() {

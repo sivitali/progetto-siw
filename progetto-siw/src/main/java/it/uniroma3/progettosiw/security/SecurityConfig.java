@@ -17,6 +17,7 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
 
 	public void configure(HttpSecurity http) throws Exception {
 
+		//Configurazione permessi alle viste
 		http
 		.authorizeRequests()
 			.antMatchers("/","/opere/**","/autori/**","/css/**","/js/**","/fonts/**").permitAll()
@@ -34,6 +35,8 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
 	
 
 	}
+	
+	//Configurazione di un'amministratore
 	@Bean
 	public UserDetailsService userDetailsService() {
 		InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();

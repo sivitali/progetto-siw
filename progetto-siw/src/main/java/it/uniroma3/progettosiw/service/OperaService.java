@@ -13,6 +13,8 @@ public class OperaService{
 	@Autowired
 	private OperaRepository operaRepository;
 	
+	//Metodi CRUD
+	
 	@Transactional
 	public void add(final Opera opera){
 		this.operaRepository.save(opera);

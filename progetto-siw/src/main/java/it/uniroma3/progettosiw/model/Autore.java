@@ -26,10 +26,10 @@ public class Autore {
 	private Long id;
 	@NotNull
 	@Size(min=1)
-	private  String nome;
+	private String nome;
 	@NotNull
 	@Size(min=1)
-	private  String cognome;
+	private String cognome;
 	private String nazionalita;
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@Temporal(TemporalType.DATE)
@@ -37,8 +37,8 @@ public class Autore {
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@Temporal(TemporalType.DATE)
 	private Date dataMorte;
-	@OneToMany(targetEntity=Opera.class, mappedBy="autore", cascade= CascadeType.REMOVE)
-	private List<Opera> opereRealizzate;
+	@OneToMany(targetEntity=Opera.class, mappedBy="autore", cascade= CascadeType.REMOVE)	//Cascade necessario poiché il campo autore di Opera non può essere null
+	private List<Opera> opereRealizzate;					//Opere realizzate dall'Autore
 	
 	protected Autore() {}
 

@@ -9,6 +9,8 @@ import it.uniroma3.progettosiw.model.Autore;
 
 public interface AutoreRepository extends CrudRepository <Autore,  Long>{
 	
+	//Metodi per possibili funzioni aggiuntive
+	
 	List<Autore> findByNome (String nome);
 	
 	List<Autore> findByCognome (String cognome);

@@ -15,17 +15,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class MainController {
 
+	//Restituisce la pagina di Log In
 	@RequestMapping("/login")
 	public String login() {
 		return "login";
 	}
-
+	
+	//Ritorna la pagina di Log In nel caso di errore
 	@RequestMapping("/login-error.html")
 	public String loginError(Model model) {
 		model.addAttribute("loginError", true);
 		return "login";
 	}
 	
+	//Effettua il Log Out
 	@RequestMapping(value="/logout", method = RequestMethod.GET)
     public String logoutPage (HttpServletRequest request, HttpServletResponse response) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();

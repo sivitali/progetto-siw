@@ -8,6 +8,8 @@ import it.uniroma3.progettosiw.model.Opera;
 
 public interface OperaRepository extends CrudRepository<Opera, Long>{
 	
+	//Metodi per possibili funzioni aggiuntive
+	
 	List<Opera> findByTitolo(String titolo);
 	
 	List<Opera> findByAnno(int anno);

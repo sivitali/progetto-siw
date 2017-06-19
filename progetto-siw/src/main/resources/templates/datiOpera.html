@@ -17,19 +17,22 @@
 	<h1>Dati opera</h1>
 	<ul>
 		<li>
-			<p th:text="#{label.titolo} + ${opera.titolo}" />
+			<p th:text="#{label.id}+' '+${opera.id}" />
 		</li>
 		<li>
-			<p th:text="#{label.anno} + ${opera.anno}" />
+			<p th:text="#{label.titolo}+' '+${opera.titolo}" />
 		</li>
 		<li>
-			<p th:text="#{label.tecnica} + ${opera.tecnica}" />
+			<p th:text="#{label.anno}+' '+${opera.anno}" />
 		</li>
 		<li>
-			<p th:text="#{label.lunghezza} + ${opera.lunghezza}" />
+			<p th:text="#{label.tecnica}+' '+${opera.tecnica}" />
 		</li>
 		<li>
-			<p th:text="#{label.larghezza} + ${opera.larghezza}" />
+			<p th:text="#{label.altezza}+' '+${opera.altezza}" />
+		</li>
+		<li>
+			<p th:text="#{label.lunghezza}+' '+${opera.lunghezza}" />
 		</li>
 		<li><span th:text="#{label.autore}"></span> <a
 			th:href="@{/autori/}+${opera.autore.id}"
@@ -39,6 +42,11 @@
 		<a class='btn btn-info btn-xs'
 			th:href="@{opera/edit?(id=${opera.id})}"><span
 			class="glyphicon glyphicon-edit"></span>Modifica </a>
+	</div>
+	<div>
+		<p>
+			<a href="/opere" class="btn btn-default">Torna alle Opere</a>
+		</p>
 	</div>
 	<div>
 		<p>

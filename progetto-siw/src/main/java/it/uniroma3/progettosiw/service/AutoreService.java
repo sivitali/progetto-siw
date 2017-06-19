@@ -11,21 +11,23 @@ import it.uniroma3.progettosiw.repository.AutoreRepository;
 public class AutoreService {
 
 	@Autowired
-	private AutoreRepository autoreRepository; 
-
-
-	public Autore findById (Long id){
-		return this.autoreRepository.findOne(id);
-	}
-	public Iterable<Autore> findAll() {
-		return this.autoreRepository.findAll();
-	}
+	private AutoreRepository autoreRepository;
+	
+	//Metodi CRUD
 	
 	@Transactional
 	public void add(final Autore autore) {
 		this.autoreRepository.save(autore);
 	}
-
+	
+	public Autore findById (Long id){
+		return this.autoreRepository.findOne(id);
+	}
+	
+	public Iterable<Autore> findAll() {
+		return this.autoreRepository.findAll();
+	}
+	
 	@Transactional
 	public void deleteById (Long id){
 		this.autoreRepository.delete(id);

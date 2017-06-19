@@ -12,7 +12,7 @@
 	<div>
 		<form name="f" th:action="@{/login}" method="post">
 			<fieldset>
-				<legend>Please Login</legend>
+				<legend>Inserisci le Credenziali</legend>
 				<div th:if="${param.error}" class="alert alert-error">
 					Username o password non validi.</div>
 				<div th:if="${param.logout}" class="alert alert-success">Sei
