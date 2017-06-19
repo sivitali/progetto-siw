@@ -69,7 +69,7 @@ public class AutoreController {
 	
 	//Porta alla form per modificare i dati di un Autore già nel Sistema
 	@GetMapping("/autore/edit")
-	public String editOpera(@RequestParam("id") Long id, Model model){
+	public String editAutore(@RequestParam("id") Long id, Model model){
 		Autore autore = this.autoreService.findById(id);
 		model.addAttribute("autore", autore);
 		return "formAutore";
