@@ -3,6 +3,16 @@ Progetto per l'esame di Giugno 2017 del corso di 'Sistemi Informativi su Web'.
 
 [Requisiti del Progetto](https://www.dropbox.com/s/8l16xmmqlkq3l01/siw%20progetto%20giugno%202017.pdf?dl=0)
 
+[Class Diagram](https://github.com/sivitali/progetto-siw/blob/master/Class%20Diagram%20di%20progetto-siw.jpg?raw=true)
+
+Schema della Base di dati (Le chiavi sono in **grassetto**):
+
+- Opere(**id**, titolo, anno, tecnica, altezza, lunghezza, autoreId);
+
+- Autori(**id**, nome, cognome, nazionalità, dataNascita, dataMorte);
+
+    Con vincolo referenziale tra Opere e Autori con autoreId=id
+
 Casi d'uso:
 
 - Inserimento di Entità nel Database:
@@ -20,3 +30,4 @@ Casi d'uso:
 - Rimozione di Entità dal Database:
 
    È possibile, previa autenticazione come Amministratore, cancellare le Entità presenti tramite degli appositi pulsanti nelle pagine elencanti le Entità presenti nel Database.
+
