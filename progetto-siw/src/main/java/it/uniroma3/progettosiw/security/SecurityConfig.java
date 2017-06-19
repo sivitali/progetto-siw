@@ -20,7 +20,7 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
 		//Configurazione permessi alle viste
 		http
 		.authorizeRequests()
-			.antMatchers("/","/opere/**","/autori/**","/css/**","/js/**","/fonts/**").permitAll()
+			.antMatchers("/","/opera/{id}","/autore/{id}","/opere/**","/autori/**","/css/**","/js/**","/fonts/**").permitAll()
 			.antMatchers("opera","autore").hasRole("ADMIN")
 		.anyRequest()
 			.authenticated()

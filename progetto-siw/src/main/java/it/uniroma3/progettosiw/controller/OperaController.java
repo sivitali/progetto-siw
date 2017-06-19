@@ -60,21 +60,21 @@ public class OperaController {
 	}
 	
 	//Fornisce la pagina dei dati di una particolare Opera
-	@RequestMapping("/opere/{id}")
+	@RequestMapping("/opera/{id}")
 	public String getOpera(@PathVariable Long id,Model model){
 		model.addAttribute("opera",this.operaService.findById(id));
 		return "datiOpera";
 	}
 	
 	//Cancella un autore dalla pagina di tutti gli Autori
-	@RequestMapping(value="/opere/{id}",method=RequestMethod.DELETE)
+	@RequestMapping(value="/opera/{id}",method=RequestMethod.DELETE)
 	public String deleteOpera(@PathVariable Long id){
 		this.operaService.deleteById(id);
 		return "redirect:/opere";
 	}
 	
 	//Porta alla form per modificare i dati di un Autore già nel Sistema
-	@GetMapping("opere/opera/edit")
+	@GetMapping("/opera/edit")
 	public String editOpera(@RequestParam("id") Long id, Model model){
 		Opera opera = this.operaService.findById(id);
 		model.addAttribute("opera", opera);

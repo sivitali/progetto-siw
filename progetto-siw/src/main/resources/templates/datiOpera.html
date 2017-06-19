@@ -35,12 +35,12 @@
 			<p th:text="#{label.lunghezza}+' '+${opera.lunghezza}" />
 		</li>
 		<li><span th:text="#{label.autore}"></span> <a
-			th:href="@{/autori/}+${opera.autore.id}"
+			th:href="@{/autore/}+${opera.autore.id}"
 			th:text="${opera.autore.nome}+' '+${opera.autore.cognome}"></a></li>
 	</ul>
 	<div sec:authorize="hasRole('ROLE_ADMIN')">
 		<a class='btn btn-info btn-xs'
-			th:href="@{opera/edit?(id=${opera.id})}"><span
+			th:href="@{/opera/edit?(id=${opera.id})}"><span
 			class="glyphicon glyphicon-edit"></span>Modifica </a>
 	</div>
 	<div>

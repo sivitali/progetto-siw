@@ -54,21 +54,21 @@ public class AutoreController {
 	}
 	
 	//Fornisce la pagina dei dati di un particolare Autore
-	@RequestMapping("/autori/{id}")
+	@RequestMapping("/autore/{id}")
 	public String getAutore(@PathVariable Long id,Model model){
 		model.addAttribute("autore",this.autoreService.findById(id));
 		return "datiAutore";
 	}
 	
 	//Cancella un autore dalla pagina di tutti gli Autori
-	@RequestMapping(value="/autori/{id}",method=RequestMethod.DELETE)
+	@RequestMapping(value="/autore/{id}",method=RequestMethod.DELETE)
 	public String deleteAutore(@PathVariable Long id){
 		this.autoreService.deleteById(id);
 		return "redirect:/autori";
 	}
 	
 	//Porta alla form per modificare i dati di un Autore già nel Sistema
-	@GetMapping("autori/autore/edit")
+	@GetMapping("/autore/edit")
 	public String editOpera(@RequestParam("id") Long id, Model model){
 		Autore autore = this.autoreService.findById(id);
 		model.addAttribute("autore", autore);

@@ -15,10 +15,10 @@
 <body>
 	<ul>
 		<li th:each="autore : ${autori}"><a class="btn btn-default"
-			th:href="@{autori/}+${autore.id}"
+			th:href="@{/autore/}+${autore.id}"
 			th:text="${autore.nome}+' '+${autore.cognome}">Nome e Cognome</a>
 			<div sec:authorize="hasRole('ROLE_ADMIN')">
-				<form th:action="@{autori/}+${autore.id}" th:method="delete">
+				<form th:action="@{/autore/}+${autore.id}" th:method="delete">
 					<input type="submit" value="Cancella" />
 				</form>
 			</div></li>
